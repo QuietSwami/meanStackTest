@@ -1,9 +1,13 @@
 {
-  "name": "application-name",
+  "name": "Loc8r",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "nodejs ./bin/www"
+  },
+  "engines":{
+    "node": "~5.8.0",
+    "npm": "~3.7.3"
   },
   "dependencies": {
     "express": "~4.0.0",
