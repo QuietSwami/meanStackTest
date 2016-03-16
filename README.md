@@ -1,2 +1,0 @@
-# meanStackTest
-Experimenting with MEAN
