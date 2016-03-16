@@ -2,10 +2,30 @@ doctype html
 html
 	head
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		title= title
+		title=title 
 		link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-		script(src='/javascripts/jquery-1.11.1.min.js')
+		script(src='/javascripts/jquery-1.12.0.min.js')
 		script(src='/bootstrap/js/bootstrap.min.js')
+		
 	body
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				.navbar-header
+					a.navbar-brand(href='/') Loc8r
+					button.navbar-toggle(type='button', data-toggle='collapse', data-target='.collapse')
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+				#mynavbar.navbar-collapse.collapse
+					ul.nav.navbar-nav
+						li
+							a(href='/about/') About
+		.container
 		block content
+
+		footer
+			.row
+				.col-xs-12
+					small &copy; Francisco Mendonca 2016
+
