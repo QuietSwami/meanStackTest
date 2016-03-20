@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 
-require('./locations');
-
 var openingTimes = new mongoose.Schema({
 	days: {
 		type: String, 
@@ -35,18 +33,18 @@ var locationSchema = new mongoose.Schema({
 		type:String,
 		required: true
 	},
-	address: String;
+	address: String,
 	rating: {
 		type:Number,
 		"default": 0,
 		min: 0,
 		max: 5
 	},
-	facilities: [String];
+	facilities: [String],
 	coords: {
 		type: [Number],
 		index: '2dsphere'
-	}
+	},
 	openingTimes: [openingTimes],
 	reviews: [reviewSchema],
 
