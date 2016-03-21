@@ -94,8 +94,7 @@ var renderDetailPage = function(req, res, locDetail){
 	});
 }
 
-/*GET 'Location info' page*/
-module.exports.locationsInfo = function(req, res){
+var getLocationInfo = function(req, res,callback){
 	var resquestOptions, path;
 	path = "/api/locations" + req.params.locationid;
 	requestOptions = {
@@ -117,12 +116,28 @@ module.exports.locationsInfo = function(req, res){
 		}
 		
 	});
-};
+}
 
-/*GET 'Add review page'*/
-module.exports.addReview = function(req, res){
-	res.render('location-review-form', {
-		title:'Review Starcups on Loc8r',
-		pageHeader: {title: 'Review Starcups'}
+var renderReviewForm = function(req, ers, locDetail){
+	res.render('location-review-form',{
+		
 	});
 };
+
+/*GET 'Location info' page*/
+module.exports.locationsInfo = function(req, res){
+	getLocationInfo(req, res, function(req, res, responseData){
+		renderDetailPage(req, res, responseData);
+	});
+};
+
+
+var renderReviewForm = function(req, res){
+  getLocationInfo(req, res, function(req, res, responseData){
+  	renderReviewForm(req, res, responseData);
+  });
+};
+
+module.exports.addReview = function(req, res){
+  renderReviewForm(req, res);
+}

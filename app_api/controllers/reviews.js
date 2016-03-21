@@ -79,7 +79,7 @@ var doSetAverageRating = function(location) {
       if (err) {
         console.log(err);
       } else {
-        console.log("Average rating updated to", ratingAverage);
+        console.log("Average rating updated to ", ratingAverage);
       }
     });
   }
@@ -230,3 +230,14 @@ module.exports.reviewsDeleteOne = function(req, res) {
       }
   );
 };
+
+var renderReviewForm = function(req, res){
+  res.render('location-review-form', {
+    title: 'Review Starcups on Loc8r',
+    pageHeader: {title: 'Review Starcups'}
+  });
+};
+
+module.exports.addReview = function(req, res){
+  renderReviewForm(req, res);
+}
